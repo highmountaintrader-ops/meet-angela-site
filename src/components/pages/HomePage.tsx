@@ -49,8 +49,8 @@ export default function HomePage() {
                 Never Miss Another Call — Or Another Job
               </h1>
               <p className="font-paragraph text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
-                Angela answers when you can’t, captures exactly what your customer
-                needs, and helps you follow up while you’re on the job.
+                Like having a personal assistant in your pocket — handling calls,
+                capturing jobs, and keeping everything organized while you work.
               </p>
             </div>
 
@@ -107,24 +107,28 @@ export default function HomePage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.25),transparent_35%)]" />
 
               <div className="relative space-y-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.2em] text-blue-300">
-                      Meet Angela
-                    </p>
-                    <p className="mt-1 text-2xl sm:text-3xl font-bold">
-                      Your AI Receptionist
-                    </p>
-                  </div>
-                  <div className="rounded-2xl bg-blue-600/20 p-4 border border-blue-500/20">
-                    <Phone className="h-8 w-8 text-blue-300" />
-                  </div>
+                <div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-5 sm:p-6">
+                  <p className="text-xs uppercase tracking-[0.2em] text-blue-300 mb-3">
+                    Why Angela
+                  </p>
+                  <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white leading-tight">
+                    Built for businesses just like yours.
+                  </h3>
+                  <p className="mt-3 text-slate-200 leading-relaxed text-sm sm:text-base">
+                    Designed to make life easier for service providers in the field —
+                    not office teams sitting behind a desk.
+                  </p>
+                  <p className="mt-3 text-slate-300 leading-relaxed text-sm sm:text-base">
+                    Built by a 25-year service provider, for service providers who
+                    need help handling calls, jobs, leads, and follow-up while the
+                    real work gets done.
+                  </p>
                 </div>
 
                 <div className="rounded-2xl border border-slate-700 bg-slate-950/70 p-5 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="h-3 w-3 rounded-full bg-green-400 animate-pulse" />
-                    <p className="text-sm text-slate-300">Angela is answering a missed call</p>
+                    <p className="text-sm text-slate-300">Angela is handling a customer call</p>
                   </div>
 
                   <div className="rounded-xl bg-slate-900 border border-slate-800 p-4">
@@ -139,7 +143,7 @@ export default function HomePage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="rounded-xl border border-slate-800 bg-slate-900 p-4">
                       <p className="text-xs uppercase tracking-wide text-slate-400">
-                        Caller request
+                        Customer request
                       </p>
                       <p className="mt-2 text-white">
                         Interior detail for SUV tomorrow morning
@@ -147,17 +151,18 @@ export default function HomePage() {
                     </div>
                     <div className="rounded-xl border border-slate-800 bg-slate-900 p-4">
                       <p className="text-xs uppercase tracking-wide text-slate-400">
-                        Saved lead
+                        Result
                       </p>
                       <p className="mt-2 text-white">
-                        John Smith • SUV detail • Tomorrow AM
+                        Lead captured and ready for follow-up
                       </p>
                     </div>
                   </div>
 
                   <div className="rounded-xl border border-blue-500/20 bg-blue-500/10 p-4">
                     <p className="text-sm text-blue-100">
-                      Later, you say: <span className="font-semibold">“Angela, review calls.”</span>
+                      Later, you say:{' '}
+                      <span className="font-semibold">“Angela, summarize today’s leads.”</span>
                     </p>
                   </div>
                 </div>
@@ -259,7 +264,7 @@ export default function HomePage() {
               {[
                 {
                   icon: Phone,
-                  title: 'Answers When You are Busy',
+                  title: 'Answers Every Call',
                   description:
                     'Angela picks up when you can’t so missed calls stop turning into missed jobs.',
                 },
@@ -570,65 +575,66 @@ export default function HomePage() {
       </section>
 
       {/* Industries Section */}
-<section id="industries" className="w-full bg-slate-900 py-16 sm:py-24 lg:py-32">
-  <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="space-y-12"
-    >
-      <div className="text-center space-y-4 max-w-4xl mx-auto">
-        <h2 className="font-heading text-4xl sm:text-5xl font-bold">
-          Built for Service Businesses
-        </h2>
-        <p className="font-paragraph text-lg text-slate-300">
-          Angela is built for service businesses and adapts to the way your business actually works —
-          from the way calls are handled to the type of information that matters most for your jobs.
-        </p>
-        <p className="font-paragraph text-base text-slate-400">
-          Angela's AI is customized for your type of business, so conversations, summaries, and follow-up
-          fit the kind of work you actually do.
-        </p>
-      </div>
-
-      <motion.div
-        variants={staggerContainer}
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true }}
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6"
-      >
-        {[
-          'Plumbers',
-          'HVAC Technicians',
-          'Electricians',
-          'Auto Detailers',
-          'Landscapers',
-          'Contractors',
-        ].map((industry, idx) => (
+      <section id="industries" className="w-full bg-slate-900 py-16 sm:py-24 lg:py-32">
+        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            key={idx}
-            variants={fadeInUp}
-            className="bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-700 text-center hover:border-blue-600 transition-colors"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-12"
           >
-            <p className="font-heading font-semibold text-sm sm:text-base">
-              {industry}
-            </p>
-          </motion.div>
-        ))}
-      </motion.div>
+            <div className="text-center space-y-4 max-w-4xl mx-auto">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold">
+                Built for Service Businesses
+              </h2>
+              <p className="font-paragraph text-lg text-slate-300">
+                Angela is built for service businesses and adapts to the way your
+                business actually works — from the way calls are handled to the type
+                of information that matters most for your jobs.
+              </p>
+              <p className="font-paragraph text-base text-slate-400">
+                Angela’s AI is customized for your type of business, so conversations,
+                summaries, and follow-up fit the kind of work you actually do.
+              </p>
+            </div>
 
-      <div className="text-center max-w-3xl mx-auto">
-        <p className="font-paragraph text-slate-400 text-base sm:text-lg">
-          And many more service businesses. Angela is designed to support a wide range of field-service
-          and appointment-based businesses.
-        </p>
-      </div>
-    </motion.div>
-  </div>
-</section>
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6"
+            >
+              {[
+                'Plumbers',
+                'HVAC Technicians',
+                'Electricians',
+                'Auto Detailers',
+                'Landscapers',
+                'Contractors',
+              ].map((industry, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={fadeInUp}
+                  className="bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-700 text-center hover:border-blue-600 transition-colors"
+                >
+                  <p className="font-heading font-semibold text-sm sm:text-base">
+                    {industry}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="font-paragraph text-slate-400 text-base sm:text-lg">
+                And many more service businesses. Angela is designed to support a wide
+                range of field-service and appointment-based businesses.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Trust & Compliance Section */}
       <section id="trust" className="w-full py-16 sm:py-24 lg:py-32">
