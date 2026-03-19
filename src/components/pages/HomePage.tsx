@@ -588,7 +588,7 @@ export default function HomePage() {
           from the way calls are handled to the type of information that matters most for your jobs.
         </p>
         <p className="font-paragraph text-base text-slate-400">
-          Angelas AI is customized for your type of business, so conversations, summaries, and follow-up
+          Angela's AI is customized for your type of business, so conversations, summaries, and follow-up
           fit the kind of work you actually do.
         </p>
       </div>
