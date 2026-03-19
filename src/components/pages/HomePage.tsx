@@ -1,15 +1,15 @@
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Phone,
-  MessageSquare,
   CheckCircle2,
-  Zap,
+  MessageSquare,
+  Phone,
   Play,
+  Zap,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -259,7 +259,7 @@ export default function HomePage() {
               {[
                 {
                   icon: Phone,
-                  title: 'Answers Every Call',
+                  title: 'Answers When You are Busy',
                   description:
                     'Angela picks up when you can’t so missed calls stop turning into missed jobs.',
                 },
