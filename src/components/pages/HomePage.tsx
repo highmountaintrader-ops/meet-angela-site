@@ -570,54 +570,65 @@ export default function HomePage() {
       </section>
 
       {/* Industries Section */}
-      <section id="industries" className="w-full bg-slate-900 py-16 sm:py-24 lg:py-32">
-        <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-12"
-          >
-            <div className="text-center space-y-4 max-w-3xl mx-auto">
-              <h2 className="font-heading text-4xl sm:text-5xl font-bold">
-                Built for Service Businesses
-              </h2>
-              <p className="font-paragraph text-lg text-slate-300">
-                Angela is designed for service businesses that depend on calls and
-                fast follow-up.
-              </p>
-            </div>
+<section id="industries" className="w-full bg-slate-900 py-16 sm:py-24 lg:py-32">
+  <div className="max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="space-y-12"
+    >
+      <div className="text-center space-y-4 max-w-4xl mx-auto">
+        <h2 className="font-heading text-4xl sm:text-5xl font-bold">
+          Built for Service Businesses
+        </h2>
+        <p className="font-paragraph text-lg text-slate-300">
+          Angela is built for service businesses and adapts to the way your business actually works —
+          from the way calls are handled to the type of information that matters most for your jobs.
+        </p>
+        <p className="font-paragraph text-base text-slate-400">
+          Angelas AI is customized for your type of business, so conversations, summaries, and follow-up
+          fit the kind of work you actually do.
+        </p>
+      </div>
 
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6"
-            >
-              {[
-                'Plumbers',
-                'HVAC Technicians',
-                'Electricians',
-                'Auto Detailers',
-                'Landscapers',
-                'Contractors',
-              ].map((industry, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={fadeInUp}
-                  className="bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-700 text-center hover:border-blue-600 transition-colors"
-                >
-                  <p className="font-heading font-semibold text-sm sm:text-base">
-                    {industry}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
+      <motion.div
+        variants={staggerContainer}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6"
+      >
+        {[
+          'Plumbers',
+          'HVAC Technicians',
+          'Electricians',
+          'Auto Detailers',
+          'Landscapers',
+          'Contractors',
+        ].map((industry, idx) => (
+          <motion.div
+            key={idx}
+            variants={fadeInUp}
+            className="bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-700 text-center hover:border-blue-600 transition-colors"
+          >
+            <p className="font-heading font-semibold text-sm sm:text-base">
+              {industry}
+            </p>
           </motion.div>
-        </div>
-      </section>
+        ))}
+      </motion.div>
+
+      <div className="text-center max-w-3xl mx-auto">
+        <p className="font-paragraph text-slate-400 text-base sm:text-lg">
+          And many more service businesses. Angela is designed to support a wide range of field-service
+          and appointment-based businesses.
+        </p>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Trust & Compliance Section */}
       <section id="trust" className="w-full py-16 sm:py-24 lg:py-32">
