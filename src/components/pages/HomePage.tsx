@@ -1,15 +1,15 @@
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  CheckCircle2,
-  MessageSquare,
   Phone,
-  Play,
+  MessageSquare,
+  CheckCircle2,
   Zap,
+  Play,
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -326,69 +326,150 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="space-y-12"
           >
-            <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <div className="text-center space-y-4 max-w-4xl mx-auto">
               <h2 className="font-heading text-4xl sm:text-5xl font-bold">
                 How It Works
               </h2>
               <p className="font-paragraph text-lg text-slate-300">
-                Simple, automatic, and built for your workflow.
+                Angela supports both sides of the job flow — whether you answer the
+                customer yourself or you are too busy to get to the phone.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                {
-                  step: 1,
-                  title: 'Customer Calls',
-                  description: 'A customer reaches out to your business.',
-                },
-                {
-                  step: 2,
-                  title: 'Angela Answers',
-                  description: 'Angela responds professionally when you are busy.',
-                },
-                {
-                  step: 3,
-                  title: 'Request Is Captured',
-                  description: 'The call is recorded, summarized, and organized.',
-                },
-                {
-                  step: 4,
-                  title: 'You Review Later',
-                  description: 'Review by voice and follow up when you are free.',
-                },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  <div className="bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-700 text-center h-full flex flex-col justify-between">
-                    <div className="mb-4">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span className="font-heading text-xl sm:text-2xl font-bold">
-                          {item.step}
-                        </span>
-                      </div>
-                      <h3 className="font-heading text-lg sm:text-xl font-bold mb-2">
-                        {item.title}
-                      </h3>
-                      <p className="font-paragraph text-slate-300 text-sm sm:text-base">
-                        {item.description}
-                      </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Scenario 1 */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+                className="bg-slate-800 border border-slate-700 rounded-3xl p-6 sm:p-8"
+              >
+                <div className="space-y-6">
+                  <div>
+                    <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-200 mb-4">
+                      Scenario 1
                     </div>
+                    <h3 className="font-heading text-2xl sm:text-3xl font-bold mb-3">
+                      Customer Calls or Texts About a Job — You Handle the Conversation
+                    </h3>
+                    <p className="font-paragraph text-slate-300 leading-relaxed">
+                      When you answer the call or respond to the customer yourself,
+                      Angela still works in the background to organize everything for
+                      you.
+                    </p>
                   </div>
 
-                  {idx < 3 && (
-                    <div className="hidden md:flex absolute -right-3 top-1/2 transform -translate-y-1/2 z-10">
-                      <ArrowRight className="w-6 h-6 text-blue-600" />
+                  <div className="space-y-4">
+                    {[
+                      {
+                        step: '1',
+                        title: 'You Answer as Normal',
+                        description:
+                          'You speak with the customer like you always do, without changing your workflow.',
+                      },
+                      {
+                        step: '2',
+                        title: 'Angela Captures the Details',
+                        description:
+                          'Angela creates a summary of the conversation, extracts the important job information, and creates or updates the contact automatically.',
+                      },
+                      {
+                        step: '3',
+                        title: 'Take Action by Voice',
+                        description:
+                          'Anytime later, you can say: summarize today’s leads, call the customer back, text the customer, remind me to call them, or schedule the appointment.',
+                      },
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="rounded-2xl border border-slate-700 bg-slate-900/70 p-5"
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shrink-0">
+                            {item.step}
+                          </div>
+                          <div>
+                            <h4 className="font-heading text-lg sm:text-xl font-bold mb-1">
+                              {item.title}
+                            </h4>
+                            <p className="font-paragraph text-slate-300 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Scenario 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-slate-800 border border-slate-700 rounded-3xl p-6 sm:p-8"
+              >
+                <div className="space-y-6">
+                  <div>
+                    <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-200 mb-4">
+                      Scenario 2
                     </div>
-                  )}
-                </motion.div>
-              ))}
+                    <h3 className="font-heading text-2xl sm:text-3xl font-bold mb-3">
+                      You’re Busy and Can’t Get to the Phone — Angela Handles It
+                    </h3>
+                    <p className="font-paragraph text-slate-300 leading-relaxed">
+                      If you are working and cannot answer, Angela responds
+                      professionally so the customer is taken care of and the lead is
+                      not lost.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    {[
+                      {
+                        step: '1',
+                        title: 'Angela Answers Professionally',
+                        description:
+                          'Angela greets the customer, keeps the interaction professional, and makes sure the caller feels helped instead of sent to voicemail.',
+                      },
+                      {
+                        step: '2',
+                        title: 'Vital Information Is Captured',
+                        description:
+                          'Angela records the call, summarizes the request, captures important details, and creates or updates the customer contact automatically.',
+                      },
+                      {
+                        step: '3',
+                        title: 'You Review and Follow Up Later',
+                        description:
+                          'When you are free, just say: summarize today’s leads, call the customer back, text the customer, remind me to call them, or schedule the appointment.',
+                      },
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="rounded-2xl border border-slate-700 bg-slate-900/70 p-5"
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shrink-0">
+                            {item.step}
+                          </div>
+                          <div>
+                            <h4 className="font-heading text-lg sm:text-xl font-bold mb-1">
+                              {item.title}
+                            </h4>
+                            <p className="font-paragraph text-slate-300 leading-relaxed">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
