@@ -7,9 +7,10 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Industries', href: '#industries' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'How It Works', href: '/#how-it-works', isRoute: true },
+    { label: 'Industries', href: '/#industries', isRoute: true },
+    { label: 'Pricing', href: '/pricing', isRoute: true },
+    { label: 'Contact', href: '/contact', isRoute: true },
   ];
 
   return (
@@ -19,31 +20,32 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="font-heading font-bold text-white text-sm sm:text-base">A</span>
+              <span className="font-heading font-bold text-white text-sm sm:text-base">F</span>
             </div>
-            <span className="font-heading font-bold text-white text-lg sm:text-xl hidden sm:inline">Meet Angela</span>
+            <span className="font-heading font-bold text-white text-lg sm:text-xl hidden sm:inline">Field Pilot</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="font-paragraph text-slate-300 hover:text-white transition-colors text-sm lg:text-base"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <Button
+              asChild
               size="sm"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg text-sm lg:text-base"
             >
-              Get Started
+              <Link to="/pricing">Get Started</Link>
             </Button>
           </div>
 
@@ -61,20 +63,23 @@ export default function Header() {
         {isOpen && (
           <nav className="md:hidden pb-4 space-y-3 border-t border-slate-800 pt-4">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
+                to={link.href}
                 className="block font-paragraph text-slate-300 hover:text-white transition-colors py-2"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button
+              asChild
               size="sm"
               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg mt-4"
             >
-              Get Started
+              <Link to="/pricing" onClick={() => setIsOpen(false)}>
+                Get Started
+              </Link>
             </Button>
           </nav>
         )}

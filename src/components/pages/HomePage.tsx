@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   ArrowRight,
   CheckCircle2,
@@ -41,34 +42,39 @@ export default function HomePage() {
             className="space-y-6 sm:space-y-8"
           >
             <div className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-200">
-              AI receptionist built for owner-operator service businesses
+              Built by a 30-year service provider, for service providers
             </div>
 
             <div className="space-y-4">
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Never Miss Another Call — Or Another Job
+                Your 24/7 Office Manager for Pennies on the Dollar
               </h1>
               <p className="font-paragraph text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl">
-                Like having a personal assistant in your pocket — handling calls,
-                capturing jobs, and keeping everything organized while you work.
+                Like having your own office manager working 24/7, recording
+                calls, creating summaries, organizing contacts, and helping you
+                stay on top of every lead while you're out doing the real work.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button
+                asChild
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6 text-base sm:text-lg rounded-lg"
               >
-                Get Started
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <Link to="/pricing">
+                  Get Started
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
               </Button>
 
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="border-slate-500 text-white hover:bg-slate-800 font-semibold px-8 py-6 text-base sm:text-lg rounded-lg"
               >
-                See How It Works
+                <a href="#how-it-works">See How It Works</a>
               </Button>
             </div>
 
@@ -78,7 +84,7 @@ export default function HomePage() {
               className="text-blue-300 hover:text-white hover:bg-slate-800 font-semibold px-0 sm:px-2 text-base sm:text-lg justify-start"
             >
               <Play className="mr-2 h-5 w-5 fill-current" />
-              Hear Angela Answer a Call
+              Hear Field Pilot Answer a Call
             </Button>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
@@ -109,7 +115,7 @@ export default function HomePage() {
               <div className="relative space-y-6">
                 <div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-5 sm:p-6">
                   <p className="text-xs uppercase tracking-[0.2em] text-blue-300 mb-3">
-                    Why Angela
+                    Why Field Pilot
                   </p>
                   <h3 className="font-heading text-2xl sm:text-3xl font-bold text-white leading-tight">
                     Built for businesses just like yours.
@@ -701,11 +707,14 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <Button
+              asChild
               size="lg"
               className="bg-white hover:bg-slate-100 text-blue-600 font-semibold px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg rounded-lg"
             >
-              Get Started Today
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <Link to="/pricing">
+                Get Started Today
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
           </motion.div>
         </div>

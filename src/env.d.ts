@@ -16,6 +16,7 @@ declare global {
 
   interface ImportMetaEnv {
     readonly BASE_NAME: string;
+    readonly PUBLIC_WEBSITE_CHECKOUT_FUNCTION_URL?: string;
   }
 }
 
